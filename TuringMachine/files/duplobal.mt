@@ -1,0 +1,16 @@
+s0
+s4
+_
+%
+s0,%,%,D,s0
+s0,a,A,D,s1
+s0,B,B,D,s3
+s0,_,_,D,s4
+s1,a,a,D,s1
+s1,B,B,D,s1
+s1,b,B,E,s2
+s2,a,a,E,s2
+s2,B,B,E,s2
+s2,A,A,D,s0
+s3,B,B,D,s3
+s3,_,_,E,s4
