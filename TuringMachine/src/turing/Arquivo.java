@@ -35,7 +35,7 @@ public class Arquivo {
 			
 			PrintWriter escreve = new PrintWriter(file);
 			
-			escreve.print(entrada+";"+condicao);
+			escreve.print(entrada+";"+condicao+"\n");
 			
 			file.close();
 			

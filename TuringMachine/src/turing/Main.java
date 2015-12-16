@@ -6,15 +6,15 @@ import java.util.Scanner;
 
 public class Main {
 	public static void main(String args[]){
-		Scanner teclado = new Scanner(System.in);
+		//Scanner teclado = new Scanner(System.in);
 		
 		//String file = teclado.nextLine();
 		
-		ArrayList<String> config = Arquivo.lerArquivo("/home/erikson/workspace/TuringMachine/files/duplobal.mt");
+		ArrayList<String> config = Arquivo.lerArquivo("/home/erikson/workspace/Maquina-de-Turing-Java/arquivo/duplobal.mt");
 		
 		//String fileIn = teclado.nextLine();
 		
-		ArrayList<String> entrada = Arquivo.lerArquivo("/home/erikson/workspace/TuringMachine/files/duplobal.in");
+		ArrayList<String> entrada = Arquivo.lerArquivo("/home/erikson/workspace/Maquina-de-Turing-Java/arquivo/duplobal.in");
 		
 		Maquina maquinaTuring = new Maquina();
 		
@@ -78,25 +78,33 @@ public class Main {
 				
 				estado = transition.getTo();
 				
+				if(encerrar != false)
 				fita[cabeca] = transition.getGrava().charAt(0);
 				
 				if(transition.getDirecao().equals("D") && cabeca < fita.length){
 					cabeca++;
 				}
 				else if(transition.getDirecao().equals("E") && cabeca != 0){
-					cabeca--;
+					cabeca = cabeca - 1;
 				}
 				if(encerrar == false){
 					terminou = true;
 					condicao = "Rejeitado";
 				}
-				else if(estado.equals(maquinaTuring.getEstadoFinal()) && fita[cabeca] == maquinaTuring.getFinalFita().charAt(0)){
+				else if(estado.equals(maquinaTuring.getEstadoFinal())){
 					terminou = true;
 					condicao = "Aceito";
 				}
+				else if(cabeca == -1){
+					terminou = true;
+					condicao = "Rejeitado";
+				}
+				
+				//fita[cabeca] == maquinaTuring.getFinalFita().charAt(0)
 			}
 			
-			Arquivo.gravarArquivo(fitaAux, condicao, "teste.in");
+			Arquivo.gravarArquivo(entrada.get(i), condicao, "teste.in");
 		}
+		System.out.println("Processo Encerrado");
 	}
 }
