@@ -6,15 +6,15 @@ import java.util.Scanner;
 
 public class Main {
 	public static void main(String args[]){
-		//Scanner teclado = new Scanner(System.in);
+		Scanner teclado = new Scanner(System.in);
 		
-		//String file = teclado.nextLine();
+		String file = teclado.nextLine();
 		
-		ArrayList<String> config = Arquivo.lerArquivo("/home/erikson/workspace/Maquina-de-Turing-Java/arquivo/duplobal.mt");
+		ArrayList<String> config = Arquivo.lerArquivo("/home/erikson/workspace/Maquina-de-Turing-Java/arquivo/"+file);
 		
-		//String fileIn = teclado.nextLine();
+		String fileIn = teclado.nextLine();
 		
-		ArrayList<String> entrada = Arquivo.lerArquivo("/home/erikson/workspace/Maquina-de-Turing-Java/arquivo/duplobal.in");
+		ArrayList<String> entrada = Arquivo.lerArquivo("/home/erikson/workspace/Maquina-de-Turing-Java/arquivo/"+fileIn);
 		
 		Maquina maquinaTuring = new Maquina();
 		
@@ -103,7 +103,10 @@ public class Main {
 				//fita[cabeca] == maquinaTuring.getFinalFita().charAt(0)
 			}
 			
-			Arquivo.gravarArquivo(entrada.get(i), condicao, "teste.in");
+			String saida[] = fileIn.split(".");
+					
+			
+			Arquivo.gravarArquivo(entrada.get(i), String.valueOf(fita),condicao, "concatencao"+".out");
 		}
 		System.out.println("Processo Encerrado");
 	}

@@ -29,13 +29,13 @@ public class Arquivo {
 		return null;
 		
 	}
-	public static void gravarArquivo(String entrada,String condicao,String nomeArquivo){
+	public static void gravarArquivo(String entrada,String fitaSaida,String condicao,String nomeArquivo){
 		try {
 			FileWriter file = new FileWriter(nomeArquivo,true);
 			
 			PrintWriter escreve = new PrintWriter(file);
 			
-			escreve.print(entrada+";"+condicao+"\n");
+			escreve.print(entrada+";"+fitaSaida+condicao+"\n");
 			
 			file.close();
 			
