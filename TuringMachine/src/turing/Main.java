@@ -16,6 +16,7 @@ public class Main {
 		
 		ArrayList<String> entrada = Arquivo.lerArquivo("/home/erikson/workspace/Maquina-de-Turing-Java/arquivo/"+fileIn);
 		
+		
 		Maquina maquinaTuring = new Maquina();
 		
 		//separa a configuração inicial
@@ -99,14 +100,12 @@ public class Main {
 					terminou = true;
 					condicao = "Rejeitado";
 				}
-				
-				//fita[cabeca] == maquinaTuring.getFinalFita().charAt(0)
 			}
 			
-			String saida[] = fileIn.split(".");
+			String saida[] = fileIn.split(".in");
 					
 			
-			Arquivo.gravarArquivo(entrada.get(i), String.valueOf(fita),condicao, "concatencao"+".out");
+			Arquivo.gravarArquivo(entrada.get(i), String.valueOf(fita),condicao, saida[0]);
 		}
 		System.out.println("Processo Encerrado");
 	}

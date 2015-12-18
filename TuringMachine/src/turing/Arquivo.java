@@ -31,11 +31,11 @@ public class Arquivo {
 	}
 	public static void gravarArquivo(String entrada,String fitaSaida,String condicao,String nomeArquivo){
 		try {
-			FileWriter file = new FileWriter(nomeArquivo,true);
+			FileWriter file = new FileWriter(nomeArquivo+".out",true);
 			
 			PrintWriter escreve = new PrintWriter(file);
 			
-			escreve.print(entrada+";"+fitaSaida+condicao+"\n");
+			escreve.print(entrada+";"+fitaSaida+";"+condicao+"\n");
 			
 			file.close();
 			
