@@ -9,8 +9,8 @@ public class Maquina {
 	private String estadoIncial;
 	private String estadoFinal;
 	private ArrayList<Transicao> transicao;
-	
-	public Maquina(){
+
+	public Maquina() {
 		fita = "";
 		inicioFita = "";
 		finalFita = "";
@@ -24,7 +24,7 @@ public class Maquina {
 	}
 
 	public void setFita(String fita) {
-		this.fita = getInicioFita()+fita+getFinalFita();
+		this.fita = getInicioFita() + fita + getFinalFita();
 	}
 
 	public String getInicioFita() {

@@ -9,36 +9,37 @@ import java.io.PrintWriter;
 import java.util.ArrayList;
 
 public class Arquivo {
-	public static ArrayList<String> lerArquivo(String arquivo){
-	try {
+	public static ArrayList<String> lerArquivo(String arquivo) {
+		try {
 			FileReader file = new FileReader(arquivo);
-			
+
 			BufferedReader br = new BufferedReader(file);
-			
+
 			ArrayList<String> linha = new ArrayList<>();
-			
-			while(br.ready()){
+
+			while (br.ready()) {
 				linha.add(br.readLine());
 			}
-			
+
 			return linha;
-			
+
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 		return null;
-		
+
 	}
-	public static void gravarArquivo(String entrada,String fitaSaida,String condicao,String nomeArquivo){
+
+	public static void gravarArquivo(String entrada, String fitaSaida, String condicao, String nomeArquivo) {
 		try {
-			FileWriter file = new FileWriter(nomeArquivo+".out",true);
-			
+			FileWriter file = new FileWriter(nomeArquivo + ".out", true);
+
 			PrintWriter escreve = new PrintWriter(file);
-			
-			escreve.print(entrada+";"+fitaSaida+";"+condicao+"\n");
-			
+
+			escreve.print(entrada + ";" + fitaSaida + ";" + condicao + "\n");
+
 			file.close();
-			
+
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

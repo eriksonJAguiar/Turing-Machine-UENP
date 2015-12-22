@@ -1,14 +1,14 @@
 package turing;
 
 public class Transicao {
-	
+
 	private String to;
 	private String from;
 	private String lido;
 	private String grava;
 	private String direcao;
-	
-	public Transicao(){
+
+	public Transicao() {
 		to = "";
 		from = "";
 		lido = "";
@@ -55,7 +55,5 @@ public class Transicao {
 	public void setDirecao(String direcao) {
 		this.direcao = direcao;
 	}
-	
-	
-	
+
 }
